@@ -10,4 +10,7 @@ for(let i = 0; i <= 10; i++){
     salida += `${base} X ${i} = ${base*i} \n`
 }
 
-console.log(salida)
+fs.writeFile(`Tabla-${base}`, salida, (err)=>{
+    if(err) throw err;
+    console.log(`Tabla-${base} Creada`)
+});
